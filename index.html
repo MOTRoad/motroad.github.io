@@ -1,18 +1,97 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>音符撒尽人间</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #0b0b0d;
+            color: #eeeeee;
+            font-family: Arial, sans-serif;
+        }
+
+        .hero {
+            height: 100vh;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 64px;
+            font-weight: 300;
+            letter-spacing: 8px;
+        }
+
+        .hero p {
+            margin-top: 20px;
+            color: #888;
+            letter-spacing: 4px;
+        }
+
+        .enter {
+            margin-top: 50px;
+
+            padding: 12px 30px;
+
+            border: 1px solid #555;
+            color: #eee;
+
+            text-decoration: none;
+
+            transition: 0.3s;
+        }
+
+        .enter:hover {
+            background: #eee;
+            color: #111;
+        }
+
+    </style>
 </head>
+
 
 <body>
 
-    <h1>音符撒尽人间</h1>
+    <section class="hero">
 
-    <p>这里是我的音乐与世界。</p >
+        <h1>音符撒尽人间</h1>
 
-    <p>正在建设中……</p >
+        <p>Music · Photography · Travel</p>
+
+        <a class="enter" href="#about">
+            进入
+        </a>
+
+    </section>
+
+
+    <section id="about">
+
+        <h2>关于我</h2>
+
+        <p>
+            用音乐记录情绪，
+            用镜头记录远方。
+        </p>
+
+    </section>
 
 </body>
+
 </html>
