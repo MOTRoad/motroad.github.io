@@ -102,11 +102,101 @@
             background: #eee;
             color: #111;
         }
+        /* 黑屏过渡层 */
+
+        .transition {
+            position: fixed;
+            inset: 0;
+        
+            background: #050505;
+        
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        
+            opacity: 0;
+            visibility: hidden;
+        
+            z-index: 9999;
+        
+            transition:
+                opacity 1.5s ease,
+                visibility 1.5s ease;
+        }
+        
+        
+        /* 黑屏出现 */
+        
+        .transition.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        
+        /* 那句话 */
+        
+        .explore-text {
+            color: #eeeeee;
+        
+            font-family: Georgia, serif;
+        
+            font-size: 28px;
+        
+            letter-spacing: 6px;
+        
+            opacity: 0;
+        
+            animation: none;
+        }
+        
+        
+        /* 文字淡入淡出 */
+        
+        .transition.active .explore-text {
+            animation: explore 5s ease forwards;
+        }
+        
+        
+        @keyframes explore {
+        
+            0% {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+        
+            25% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        
+            70% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        
+            100% {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+        
+        }
 
     </style>
 </head>
 
+<script>
 
+    const enterButton = document.getElementById("enterButton");
+    const transition = document.getElementById("transition");
+
+    enterButton.addEventListener("click", () => {
+
+        transition.classList.add("active");
+
+    });
+
+</script>
+    
 <body>
 
     <section class="hero">
@@ -115,9 +205,15 @@
 
         <p>Music · Photography · Travel</p>
 
-        <a class="enter" href="#about">
+        <button class="enter" id="enterButton">
             进入
-        </a>
+        </button>
+
+        <div class="transition" id="transition">
+            <div class="explore-text">
+                You are free to explore.
+            </div>
+        </div>
 
     </section>
 
